@@ -1,0 +1,158 @@
+@import "normalize";
+$brand-primary = #202020;
+$brand-success = #38BD05;
+$primary-width = 600px;
+$primary-height = 400px;
+$primary-gutter = 8px;
+@font-face {
+    font-family: 'Bitter';
+    src: url('../font/Bitter-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+    -moz-font-feature-settings: "calt=0,liga=0";
+}
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?94407878');
+  src: url('../font/fontello.eot?94407878#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff?94407878') format('woff'),
+       url('../font/fontello.ttf?94407878') format('truetype'),
+       url('../font/fontello.svg?94407878#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1em;
+	margin-left: .2em;
+}
+ 
+.icon-menu:before { content: '\e800'; }
+.icon-clock:before { content: '\e801'; }
+html {
+	height:100%;
+	color:#fff;
+	font-family: 'Bitter', serif;
+	font-size:20px;
+	body {
+		position:relative;
+		min-height:100%;
+		height:auto;
+		background-color:$brand-primary;
+		background-position:center;
+		background-attachment:fixed;
+		ul {
+			list-style:none;
+		}
+	}
+}
+clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.clearfix {
+	clearfix();
+}
+.pull-right {
+	float:right;
+}
+.pull-left {
+	float:left;
+}
+h1, .h1 {
+	font-size: 30px;
+	text-align:center;
+}
+.btn {
+	display: inline-block;
+	width: auto;
+	margin: 0;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	text-decoration:none;
+	box-sizing:border-box;
+	transition:all .3s ease;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	&.btn-xs {
+		width:auto;
+		padding:2px 3px;
+	}
+	&.btn-add {
+		background-color:#0B5AB1;
+		color: #ffffff;
+		border-color: darken(#0B5AB1, 20%);
+		&:hover {
+			background-color: darken(#0B5AB1, 15%);
+			border-color: darken(#0B5AB1, 5%);
+		}
+	}
+	&.btn-success {
+		color: #ffffff;
+		background-color: darken($brand-success, 20%);
+		border-color: darken($brand-success, 25%);
+		&:hover {
+			background-color: darken($brand-success, 30%);
+			border-color: darken($brand-success, 35%);
+		}
+	}
+	&.disabled {
+		color: #ffffff;
+		background-color: $brand-primary;
+		border-color: darken($brand-primary, 20%);
+		&:hover {
+			background-color: darken($brand-primary, 25%);
+			border-color: darken($brand-primary, 30%);
+		}
+	}
+}
+.container {
+	position:absolute;
+	width:$primary-width;
+	height:$primary-height;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	left:0px;
+	margin:auto;
+	clearfix();
+	background-color:rgba(64, 64, 64, 0.4);
+	box-shadow:inset 0px 0px 5px #000;
+	overflow:hidden;
+	.row {
+		padding:0px 20px;
+	}
+	.visual-analyser {
+		border-bottom: 2px solid #111;
+		width: 100%;
+		background-color: #f1f1f1;
+		position: relative;
+		box-shadow: inset 0px 0px 5px #000;
+	}
+}
